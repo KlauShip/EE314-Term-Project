@@ -1,9 +1,9 @@
 # EE314-Term-Project
 
-<h1 align="center">Hi 👋, We are KlauShip</h1>
+<h1 align="center">Hi 👋, We are KlausShip</h1>
 
 ## Who Are We?
-KlauShip is a EE314 group (2024 spring semester) that came together for the term project.
+KlausShip is a EE314 group (2024 spring semester) that came together for the term project.
 
 ## Project Definition
 This project involves implementing a classic Space Invaders-inspired game using FPGA boards. The game features an engaging gameplay environment where players control a central spaceship to defend against incoming enemies. The primary screen is constructed using the VGA interface with a resolution of 640 x 480.
