@@ -23,5 +23,5 @@ This project involves implementing a classic Space Invaders-inspired game using 
 1. Batuhan Elmas
 2. Kaan Demirkoparan
 3. Sümeyra Arıcan
-4. Zülâl Uludoğan
+4. Zülal Uludoğan
 ![screen](https://github.com/KlauShip/EE314-Term-Project/assets/78930034/48742f9b-6cba-40c0-ac53-6cceb9a0b3e0)
