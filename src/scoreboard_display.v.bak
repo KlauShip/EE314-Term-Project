@@ -1,0 +1,26 @@
+module scoreboard_display (
+    input [4:0] score,
+    output [6:0] seg_tens,
+    output [6:0] seg_units
+);
+
+    wire [3:0] tens;
+    wire [3:0] units;
+
+    scoreBoard sb (
+        .score(score),
+        .tens(tens),
+        .units(units)
+    );
+
+    sscdm ssd_tens (
+        .digit(tens),
+        .segments(seg_tens)
+    );
+
+    sscdm ssd_units (
+        .digit(units),
+        .segments(seg_units)
+    );
+
+endmodule

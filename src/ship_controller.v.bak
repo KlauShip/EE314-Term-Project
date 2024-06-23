@@ -1,0 +1,46 @@
+module ship_controller (
+  input wire clk,  // 25 MHz input clock
+  input wire rst,     // Reset signal
+  input button_ccw,           // button_ccw count control signal
+  input button_cw,         // button_cw count control signal
+  output reg [3:0] ship_pose // Counter value
+);
+  parameter DIVIDE_BY = 2;  // Divide by 5,000,000
+  reg [22:0] counter;       // 23-bit counter to count button_ccw to 5,000,000 (log2(5000000) ≈ 22.3)
+  reg clk_out;              // 5 Hz output clock
+
+  always @(posedge clk or negedge rst) begin
+    if(~rst)begin
+      counter <= 0;
+      clk_out <= 0;
+    end else begin
+      if (counter == (DIVIDE_BY/2 - 1)) begin
+        clk_out <= ~clk_out;  // Toggle output clock
+        counter <= 0;         // Reset counter
+      end else begin
+        counter <= counter + 1;  // Increment counter
+      end
+    end
+  end
+
+  always @(posedge clk_out) begin
+    if (rst == 1'b0) begin
+      ship_pose <= 4'b0000; // Reset count
+    end else begin
+      if (button_ccw == 1'b0) begin
+        if (ship_pose < 4'b1111) begin
+          ship_pose <= ship_pose + 1; // Count button_ccw
+        end else begin
+          ship_pose <= 4'b0000; // Reset counter
+        end
+      end else if (button_cw == 1'b0) begin
+        if (ship_pose > 4'b0000) begin
+          ship_pose <= ship_pose - 1; // Count button_cw
+        end else begin
+          ship_pose <= 4'b1111; // Reset counter
+        end
+      end
+    end
+  end
+
+endmodule

@@ -1,0 +1,30 @@
+module positionDecoder(
+	input wire [10:0] enemy0_out,
+   input wire [10:0] enemy1_out,
+   input wire [10:0] enemy2_out,
+   input wire [10:0] enemy3_out,
+   input wire [10:0] enemy4_out,
+   input wire [10:0] enemy5_out,
+   input wire [10:0] enemy6_out,
+   input wire [10:0] enemy7_out,
+	output reg [8:0] enemy0_X,
+	output reg [8:0] enemy1_X,
+	output reg [8:0] enemy2_X,
+	output reg [8:0] enemy3_X,
+	output reg [8:0] enemy4_X,
+	output reg [8:0] enemy5_X,
+	output reg [8:0] enemy6_X,
+	output reg [8:0] enemy7_X,
+	output reg [8:0] enemy0_Y,
+	output reg [8:0] enemy1_Y,
+	output reg [8:0] enemy2_Y,
+	output reg [8:0] enemy3_Y,
+	output reg [8:0] enemy4_Y,
+	output reg [8:0] enemy5_Y,
+	output reg [8:0] enemy6_Y,
+	output reg [8:0] enemy7_Y
+);
+
+
+
+endmodule

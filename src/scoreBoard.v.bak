@@ -1,0 +1,9 @@
+module scoreBoard(
+	input wire [4:0] score,
+	output [3:0] digit1,
+	output [3:0] digit2
+);
+
+
+
+endmodule
